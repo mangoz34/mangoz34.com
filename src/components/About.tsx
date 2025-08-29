@@ -5,12 +5,12 @@ const About = () => {
     return (
         <article className={`card-style ${styles.about}`}>
             <header>
-                <h2 className={`${styles.h2} ${styles.articleTitle}`}>About me</h2>
+                <h2 className={`${styles.h2} ${styles.articleTitle}`}>About Jerry</h2>
             </header>
 
             <section className={styles.aboutText}>
                 <p>
-                    Born in Taiwan, study in Japan and USA.
+                    Born in Taiwan🇹🇼, study in Japan🇯🇵 and US🇺🇲.
                 </p>
                 <p>
                     My job is to build your website so that it is functional and user-friendly but at the same time attractive.
