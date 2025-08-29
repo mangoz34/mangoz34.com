@@ -1,0 +1,99 @@
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+.about {
+    display: block;
+}
+
+.about .article-title {
+    margin-bottom: 15px;
+}
+
+.aboutText {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+.aboutText p {
+    margin-bottom: 15px;
+}
+
+
+/*-----------------------------------*\
+  #REUSED STYLE (FROM ORIGINAL CSS)
+\*-----------------------------------*/
+
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--white-2);
+    text-transform: capitalize;
+}
+
+.h2 {
+    font-size: var(--fs-1);
+}
+
+.h3 {
+    font-size: var(--fs-2);
+}
+
+.h4 {
+    font-size: var(--fs-4);
+}
+
+.h5 {
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+}
+
+.articleTitle {
+    position: relative;
+    padding-bottom: 7px;
+}
+
+.articleTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--text-gradient-yellow);
+    border-radius: 3px;
+}
+
+
+/*-----------------------------------*\
+  #RESPONSIVE
+\*-----------------------------------*/
+
+@media (min-width: 580px) {
+
+    .about {
+        padding: 30px;
+    }
+
+    .articleTitle {
+        font-weight: var(--fw-600);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .articleTitle::after {
+        width: 40px;
+        height: 5px;
+    }
+
+    .about .article-title {
+        margin-bottom: 20px;
+    }
+
+    .aboutText {
+        margin-bottom: 40px;
+    }
+}

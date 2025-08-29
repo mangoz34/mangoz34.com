@@ -1,0 +1,126 @@
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service {
+    margin-bottom: 35px;
+}
+
+.serviceTitle {
+    margin-bottom: 20px;
+}
+
+.serviceList {
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.serviceItem {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    z-index: 1;
+    min-width: 100%;
+    scroll-snap-align: start;
+}
+
+.serviceItem::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.serviceIconBox {
+    color: var(--orange-yellow-crayola);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceIconBox img {
+    margin: auto;
+    align-items: center;
+}
+
+.serviceContentBox {
+    text-align: center;
+}
+
+.serviceItemTitle {
+    margin-bottom: 7px;
+}
+
+.serviceItemText {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-3);
+    line-height: 1.6;
+}
+
+/*-----------------------------------*\
+  #REUSED STYLE (FROM ORIGINAL CSS)
+\*-----------------------------------*/
+
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--white-2);
+    text-transform: capitalize;
+}
+
+.h2 {
+    font-size: var(--fs-1);
+}
+
+.h3 {
+    font-size: var(--fs-2);
+}
+
+.h4 {
+    font-size: var(--fs-4);
+}
+
+.h5 {
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+}
+
+/*-----------------------------------*\
+  #RESPONSIVE
+\*-----------------------------------*/
+
+
+@media (min-width: 580px) {
+    .serviceItem {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 18px;
+        padding: 30px;
+    }
+
+    .serviceIconBox {
+        color: var(--orange-yellow-crayola);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .serviceContentBox {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .serviceItem {
+        min-width: 50%;
+    }
+}
