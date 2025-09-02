@@ -1,0 +1,72 @@
+/*-----------------------------------*\
+  #SKILLS
+\*-----------------------------------*/
+
+.skills {
+    margin-bottom: 35px;
+}
+
+.skillsTitle {
+    margin-bottom: 20px;
+}
+
+.skillsListScrollable {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+}
+
+.skillsListScrollable::-webkit-scrollbar {
+    height: 5px;
+}
+
+.skillsListScrollable::-webkit-scrollbar-thumb {
+    background: var(--orange-yellow-crayola);
+    border-radius: 5px;
+}
+
+.skillCategoryItem {
+    /* 這裡是單獨卡片的樣式 */
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    z-index: 1;
+    min-width: 300px; /* 這裡設定了卡片的最小寬度 */
+    scroll-snap-align: start;
+}
+
+.skillCategoryItem::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.skillCategoryHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--white-2);
+}
+
+.skillTagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skillTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--onyx);
+    color: var(--light-gray);
+    border-radius: 5px;
+    padding: 5px 10px;
+}

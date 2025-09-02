@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 .about {
-    display: block;
+
 }
 
 .about .article-title {
@@ -19,6 +19,18 @@
 
 .aboutText p {
     margin-bottom: 15px;
+    white-space: nowrap;
+}
+
+.aboutText p a {
+    display: inline;
+    color: var(--orange-yellow-crayola);
+    text-decoration: none;
+    transition: color var(--transition-1);
+}
+
+.aboutText p a:hover {
+    text-decoration: underline;
 }
 
 
@@ -54,6 +66,7 @@
 .articleTitle {
     position: relative;
     padding-bottom: 7px;
+    color: var(--white-1);
 }
 
 .articleTitle::after {
@@ -79,6 +92,7 @@
     }
 
     .articleTitle {
+        font-size: var(--fs-1);
         font-weight: var(--fw-600);
         padding-bottom: 20px;
         margin-bottom: 20px;

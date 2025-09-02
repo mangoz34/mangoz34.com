@@ -67,8 +67,8 @@
    * font-size
    */
   --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
+  --fs-2: 20px;
+  --fs-3: 18px;
   --fs-4: 16px;
   --fs-5: 15px;
   --fs-6: 14px;
@@ -215,6 +215,7 @@ body { background: var(--smoky-black); }
 .has-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
+  display: none;
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -263,50 +264,32 @@ body { background: var(--smoky-black); }
 \*-----------------------------------*/
 
 main {
-  margin: 10px 12px;
-  margin-bottom: 30px;
+  margin: 10px 12px 30px;
   min-width: 259px;
 }
-
-@media (min-width: 580px) {
-  main {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-}
-
-@media (min-width: 1250px) {
-  main {
-    max-width: 1200px;
-    margin-inline: auto;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-  }
-}
-
-/*-----------------------------------*\
-  #MAIN-CONTENT
-\*-----------------------------------*/
 
 .main-content {
   position: relative;
 }
 
-@media (min-width: 1024px) {
-  .main-content {
-    width: max-content;
-    margin: auto;
-  }
+/*-----------------------------------*\
+  #PAGES
+\*-----------------------------------*/
+
+article {
+  width: 100%;
+  margin-inline: auto;
+  display: none;
 }
 
-@media (min-width: 1250px) {
-  .main-content {
-    min-width: 75%;
-    width: 75%;
-    margin: 0;
-  }
+article.active {
+  display: block;
+  animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /*-----------------------------------*\
@@ -324,9 +307,12 @@ main {
     --fs-7: 15px;
     --fs-8: 12px;
   }
-}
 
-@media (min-width: 580px) {
+  main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
   .icon-box {
     width: 48px;
     height: 48px;
@@ -347,13 +333,20 @@ main {
     height: 5px;
     padding-bottom: 20px;
   }
+
+  .card-style {
+    margin-inline: auto;
+  }
 }
 
 @media (min-width: 768px) {
-  .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+  article {
+    width: 700px;
+  }
 }
 
-@media (min-width: 1250px) {
+
+@media (min-width: 1024px) {
   :root {
     --fs-1: 30px;
     --fs-2: 28px;
@@ -367,6 +360,25 @@ main {
 
   .h2, .h3, .h4, .h5 {
     font-size: initial;
+  }
+
+  article {
+    width: 900px;
+  }
+
+  main {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  .main-content {
+    min-width: 75%;
+    width: 75%;
+    margin: 0;
   }
 
   .article-title {
@@ -391,22 +403,4 @@ main {
   }
   .has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
   .has-scrollbar::-webkit-scrollbar-button { height: 60px; }
-}
-
-/*-----------------------------------*\
-  #PAGES
-\*-----------------------------------*/
-
-article {
-  display: none;
-}
-
-article.active {
-  display: block;
-  animation: fade 0.5s ease backwards;
-}
-
-@keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
 }

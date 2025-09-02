@@ -1,25 +1,44 @@
+'use client';
+
 import styles from './About.module.css';
 import Services from './Services';
+import Skills from "./Skills";
+import { Fade } from 'react-awesome-reveal';
 
-const About = () => {
+
+interface AboutProps {
+    isActive: boolean;
+}
+
+const About = ({ isActive }: AboutProps) => {
     return (
-        <article className={`card-style ${styles.about}`}>
+        <article className={`card-style ${styles.about} ${isActive ? 'active' : ''}`} data-page="about">
             <header>
-                <h2 className={`${styles.h2} ${styles.articleTitle}`}>About Jerry</h2>
+                <Fade>
+                    <h2 className={`h2 ${styles.articleTitle}`}>About me</h2>
+                </Fade>
             </header>
 
-            <section className={styles.aboutText}>
-                <p>
-                    Born in Taiwan🇹🇼, study in Japan🇯🇵 and US🇺🇲.
-                </p>
-                <p>
-                    My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-                    Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-                    across your message and identity in the most creative way. I created web design for many famous brand companies.
-                </p>
-            </section>
+            <Fade triggerOnce>
+                <section className={styles.aboutText}>
+                    <p>
+                        Born in Taiwan 🇹🇼, study in Japan 🇯🇵 and US 🇺🇲.
+                    </p>
+                    <br/>
+                    <p>
+                        Hi, This is Jerry. I&#39;m currently an MS student at <a href="https://www.washington.edu/">University of Washington</a>.
+                    </p>
+                </section>
+            </Fade>
 
-            <Services />
+            <Fade triggerOnce delay={250}>
+                <Services />
+            </Fade>
+
+            <Fade triggerOnce delay={500}>
+                <Skills />
+            </Fade>
+
         </article>
     );
 };

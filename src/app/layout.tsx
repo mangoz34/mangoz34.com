@@ -11,7 +11,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body>
         <main>
             {
-                /* page.tsx content area */
+
             }
             {children}
         </main>

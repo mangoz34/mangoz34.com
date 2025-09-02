@@ -16,6 +16,8 @@
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+    scroll-padding-right: 0;
 }
 
 .serviceItem {
@@ -26,6 +28,7 @@
     z-index: 1;
     min-width: 100%;
     scroll-snap-align: start;
+    scroll-snap-type: x mandatory;
 }
 
 .serviceItem::before {
@@ -60,7 +63,7 @@
 .serviceItemText {
     color: var(--light-gray);
     font-size: var(--fs-6);
-    font-weight: var(--fw-3);
+    font-weight: var(--fw-300);
     line-height: 1.6;
     white-space: pre-line;
 }
@@ -86,6 +89,68 @@
     background-color: var(--orange-yellow-crayola);
 }
 
+.skillTagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skillTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--onyx);
+    color: var(--light-gray);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contactInfo {
+    margin-top: 20px;
+}
+
+.contactListGrid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contactListGrid li {
+    min-width: 100%;
+}
+
+.contactTitle {
+    font-size: var(--fs-2);
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--white-1);
+}
+
+.contactLink {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    z-index: 1;
+    min-width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    transition: transform 0.3s ease;
+}
+
+.contactLink::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.contactLink:hover  {
+    transform: scale(1.03);
+}
 /*-----------------------------------*\
   #REUSED STYLE (FROM ORIGINAL CSS)
 \*-----------------------------------*/
@@ -139,10 +204,23 @@
     .serviceContentBox {
         text-align: left;
     }
+
+    .contactLink {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 18px;
+        padding: 30px;
+    }
 }
 
 @media (min-width: 1024px) {
     .serviceItem {
-        min-width: 50%;
+        min-width: 49%;
+    }
+
+    .contactListGrid li {
+        min-width: 48%;
+        flex-basis: 48%;
     }
 }

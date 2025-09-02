@@ -1,0 +1,76 @@
+/* src/components/Photo.module.css */
+
+
+.photo .article-title {
+    margin-bottom: 15px;
+}
+
+.articleTitle {
+    position: relative;
+    padding-bottom: 7px;
+    color: var(--white-1);
+    font-size: var(--fs-2);
+}
+
+.articleTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--text-gradient-yellow);
+    border-radius: 3px;
+}
+
+.underConstruction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--border-gradient-onyx);
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+.constructionText {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.memeContainer {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
+}
+
+.memeImage {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 580px) {
+
+    .photo {
+        padding: 30px;
+    }
+
+    .articleTitle {
+        font-size: var(--fs-1);
+        font-weight: var(--fw-600);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .articleTitle::after {
+        width: 40px;
+        height: 5px;
+    }
+}
